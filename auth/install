@@ -1,0 +1,11 @@
+#!/bin/bash
+
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get install -y bind9 bind9utils bind9-doc net-tools
+cp named.conf.local /etc/bind/named.conf.local
+cp named.conf.options.auth /etc/bind/named.conf.options
+mkdir /etc/bind/zones
+cp db.google.com /etc/bind/zones
+cp db.10 /etc/bind/zones
+service bind9 restart
+

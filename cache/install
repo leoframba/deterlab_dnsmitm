@@ -1,0 +1,9 @@
+#!/bin/bash
+
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get install -y bind9 bind9utils bind9-doc net-tools
+awk  'BEGIN {print "nameserver 10.1.2.3" } {print}' /etc/resolv.conf > file
+mv file /etc/resolv.conf
+cp named.conf.options.cache /etc/bind/named.conf.options
+/etc/init.d/bind9 restart
+

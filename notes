@@ -1,0 +1,9 @@
+add /sbin to path
+nameserver 172.30.0.1
+mkdir zones was crucial
+sudo ettercap -i eth1  -P dns_spoof  -M  arp /10.1.1.2/10.1.2.3// -T
+for DNSSEC
+different named.conf.options etc. see https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-14-04
+https://www.digitalocean.com/community/tutorials/how-to-setup-dnssec-on-an-authoritative-bind-dns-server-2
+remind students they have to add trust anchor
+make sure that /etc/resolv.conf is rewritten often
