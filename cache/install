@@ -7,3 +7,10 @@ mv file /etc/resolv.conf
 cp named.conf.options.cache /etc/bind/named.conf.options
 /etc/init.d/bind9 restart
 
+## Script for setting hostname
+# Get the current hostname
+new_hostname=$(hostname)
+
+# Replace the old hostname with the new one in /etc/hosts
+sudo sed -i "s/127.0.1.1\tdebian/127.0.1.1\t$new_hostname/" /etc/hosts
+echo "Hostname in /etc/hosts updated to $new_hostname"
